@@ -1,0 +1,14 @@
+<svg width="500" height="260" viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eeeeee"/>
+      <stop offset="50%" stop-color="#b2b2b2"/>
+      <stop offset="100%" stop-color="#7a7a7a"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="214" height="214" rx="30" stroke="url(#silver)" stroke-width="16" fill="none"/>
+  <path d="M92 90 H150 C160 90 168 98 168 108 V120 C168 130 160 138 150 138 H118 V156 H96 V90 Z" fill="url(#silver)"/>
+  <path d="M172 90 H202 L238 156 H216 L212 142 H184 L178 156 H156 L192 90 H220 L256 156 H234 L232 146 H206 L200 156 H178 L172 90 Z" fill="url(#silver)"/>
+  <text x="250" y="132" font-family="Inter, sans-serif" font-size="40" fill="#616161" font-weight="700">GURU</text>
+  <text x="250" y="185" font-family="Inter, sans-serif" font-size="40" fill="#424242" font-weight="700">VETCHEM</text>
+</svg>
