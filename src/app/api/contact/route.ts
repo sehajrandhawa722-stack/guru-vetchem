@@ -1,18 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVi5IxxtIUdB1OWj9NE6fsjTiD7BG1afIN72r6sc-DBAABdyyWy7aTqfuPadw-2Rjg/exec';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Here you would integrate with Google Sheets API
-    // For now, just log the data
-    console.log('New contact form submission:', body);
+    const response = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
 
-    // In production:
-    // const { google } = require('googleapis');
-    // const auth = new google.auth.GoogleAuth({ ... });
-    // const sheets = google.sheets({ version: 'v4', auth });
-    // await sheets.spreadsheets.values.append({ ... });
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      console.error('Apps Script error:', result?.error || 'Unknown error');
+      return NextResponse.json({ error: 'Failed to save contact request' }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
