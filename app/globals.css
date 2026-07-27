@@ -1250,7 +1250,8 @@ footer > p {
 
 @media (max-width: 650px) {
   .site-header {
-    inset: 10px;
+    inset: 10px 10px auto;
+    height: auto;
     padding: 8px 8px 8px 10px;
   }
 
